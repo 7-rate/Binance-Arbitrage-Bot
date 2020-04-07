@@ -86,11 +86,11 @@ class BinanceArbBot:
 
         for s in info['symbols']:        
             symbol = s['symbol']
-            stepSize = s['filters'][1]['stepSize']
+            stepSize = s['filters'][2]['stepSize']
             self.quantity_round[symbol] = stepSize.index('1') - 1
-            self.min_quantity[symbol] = s['filters'][1]['minQty']
-            self.max_quantity[symbol] = s['filters'][1]['maxQty']
-            self.min_notional[symbol] = s['filters'][2]['minNotional']
+            self.min_quantity[symbol] = s['filters'][2]['minQty']
+            self.max_quantity[symbol] = s['filters'][2]['maxQty']
+            self.min_notional[symbol] = s['filters'][3]['minNotional']
             self.tick_size[symbol] = float(s['filters'][0]['tickSize'])
             self.price_round[symbol] = s['filters'][0]['tickSize'].index('1') - 1
 
